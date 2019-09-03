@@ -1,0 +1,8 @@
+com\marko\konsApp\config\AuditingConfig.class
+com\marko\konsApp\repository\RoleRepository.class
+com\marko\konsApp\model\audit\DateAudit.class
+com\marko\konsApp\model\RoleName.class
+com\marko\konsApp\model\Role.class
+com\marko\konsApp\model\User.class
+com\marko\konsApp\repository\UserRepository.class
+com\marko\konsApp\KonsAppApplication.class
