@@ -9,6 +9,7 @@ import com.marko.securityApp.model.dto.UserDTO;
 import com.marko.securityApp.security.CurrentUser;
 import com.marko.securityApp.security.UserPrincipal;
 import com.marko.securityApp.service.UserService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,4 +43,16 @@ public class UserController {
     public Boolean isEmailUnique(@RequestParam(value = "email") String email){
         return userService.isEmailUnique(email);
     }
+    
+    @GetMapping("/users/all")
+    @PreAuthorize("hasRole('ADMIN')")
+    public List<UserDTO> getAll(){
+        return  userService.getAll();
+    }
+    
+//    @GetMapping("/users")
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public List<UserDTO> getUsers(){
+//        return  userService.getUsers();
+//    }
 }

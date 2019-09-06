@@ -5,19 +5,13 @@
  */
 package com.marko.securityApp.model;
 
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import org.hibernate.annotations.NaturalId;
 
@@ -26,35 +20,22 @@ import org.hibernate.annotations.NaturalId;
  * @author Marko
  */
 @Entity
-@Table(name = "role")
-public class Role {
-
+@Table(name = "privilege")
+public class Privilege {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     @Enumerated(EnumType.STRING)
     @NaturalId
     @Column(length = 60)
-    private RoleName name;
+    private PrivilegeName name;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "roles_privileges", joinColumns = @JoinColumn(name = "role_id"),
-            inverseJoinColumns = @JoinColumn(name = "privilege_id"))
-    private Set<Privilege> privileges = new HashSet<>();
-
-    public Role() {
+    public Privilege() {
     }
 
-    public Role(RoleName name) {
-        this.name = name;
-    }
-
-    public RoleName getName() {
-        return name;
-    }
-
-    public void setName(RoleName name) {
+    public Privilege(PrivilegeName name) {
         this.name = name;
     }
 
@@ -66,12 +47,12 @@ public class Role {
         this.id = id;
     }
 
-    public Set<Privilege> getPrivileges() {
-        return privileges;
+    public PrivilegeName getName() {
+        return name;
     }
 
-    public void setPrivileges(Set<Privilege> privileges) {
-        this.privileges = privileges;
+    public void setName(PrivilegeName name) {
+        this.name = name;
     }
-
+    
 }

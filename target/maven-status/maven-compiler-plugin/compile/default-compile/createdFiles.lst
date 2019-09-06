@@ -1,13 +1,16 @@
 com\marko\securityApp\mapper\UserMapperImpl.class
 com\marko\securityApp\config\SpringSecurityAuditAwareImpl.class
+com\marko\securityApp\model\Privilege.class
 com\marko\securityApp\repository\RoleRepository.class
 com\marko\securityApp\exception\ResourceNotFoundException.class
 com\marko\securityApp\security\JwtAuthenticationFilter.class
 com\marko\securityApp\repository\UserRepository.class
 com\marko\securityApp\model\dto\UserDTO.class
+com\marko\securityApp\model\PrivilegeName.class
 com\marko\securityApp\controller\AuthController.class
 com\marko\securityApp\mapper\UserMapper.class
 com\marko\securityApp\security\JwtTokenProvider.class
+com\marko\securityApp\config\SetupDataLoader.class
 com\marko\securityApp\payload\JwtAuthenticationResponse.class
 com\marko\securityApp\service\UserService.class
 com\marko\securityApp\controller\UserController.class
@@ -27,6 +30,7 @@ com\marko\securityApp\config\AuditingConfig.class
 com\marko\securityApp\config\WebMvcConfig.class
 com\marko\securityApp\exception\BadRequestException.class
 com\marko\securityApp\model\User.class
+com\marko\securityApp\repository\PrivilegeRepository.class
 com\marko\securityApp\payload\LoginRequest.class
 com\marko\securityApp\config\SecurityConfig.class
 com\marko\securityApp\security\UserPrincipal.class

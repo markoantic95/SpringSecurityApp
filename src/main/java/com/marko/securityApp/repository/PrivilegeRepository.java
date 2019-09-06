@@ -5,8 +5,8 @@
  */
 package com.marko.securityApp.repository;
 
-import com.marko.securityApp.model.Role;
-import com.marko.securityApp.model.RoleName;
+import com.marko.securityApp.model.Privilege;
+import com.marko.securityApp.model.PrivilegeName;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -16,7 +16,8 @@ import org.springframework.stereotype.Repository;
  * @author Marko
  */
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long>{
-    
-    Optional<Role> findByName(RoleName roleName);
+public interface PrivilegeRepository extends JpaRepository<Privilege, Long>{
+
+    Optional<Privilege> findByName(PrivilegeName privilegeName);
+
 }
